@@ -11,6 +11,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+
 // const Greeter = ({whom}) => (
 //   <button onClick={()=>{alert('coucou '+whom);}}  >
 //     Clique Clique !
