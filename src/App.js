@@ -4,7 +4,7 @@ import GuessCount from './GuessCount';
 import Card from './Card';
 import shuffle from 'lodash.shuffle';
 import HallOfFame, {FAKE_HOF} from './HallOfFame'
-
+import HighScoreInput from './HighScoreInput';
 import './App.css';
 
 const SIDE = 6
@@ -87,6 +87,7 @@ class App extends Component {
             onClick = {this.handleCardClick}
             feedback = {this.getFeedbackForCard(index)}/>
         ))}
+        <HighScoreInput guesses={guesses}/>
         {won && <HallOfFame entries={FAKE_HOF}/>}
       </div>
     );
