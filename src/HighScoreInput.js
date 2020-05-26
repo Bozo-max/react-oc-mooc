@@ -12,9 +12,15 @@ class HighScoreInput extends Component {
         this.setState({winner: event.target.value.toUpperCase()});
     }
 
+    persistWinner = (event) => {
+        event.preventDefault();
+        const newEntry = {guesses: this.props.guesses, player: this.state.winner};
+        saveHOFEntry(newEntry, this.props.onStored);
+    }
+
     render() {
         return (
-            <form className="highScoreInput">
+            <form className="highScoreInput" onSubmit={this.persistWinner}>
                 <p>
                     <label>
                         Bravo ! Entre ton prénom :
@@ -34,6 +40,7 @@ class HighScoreInput extends Component {
 
 HighScoreInput.propTypes = {
     guesses: PropTypes.number.isRequired,
+    onStored: PropTypes.func.isRequired,
 }
 
 export default HighScoreInput
